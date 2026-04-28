@@ -8,12 +8,10 @@ async function start() {
   try {
     await initDB()
     app.listen(PORT, () => {
-      console.log(`🚀  SavingsBE running on http://localhost:${PORT}`)
-      console.log(`📊  Health: http://localhost:${PORT}/health`)
-      console.log(`💾  DB: Neon PostgreSQL`)
+      console.log('✅  Server is running')
     })
   } catch (err) {
-    console.error('❌  Failed to start server:', err.message)
+    console.error('❌  Server is not running:', err.message)
     process.exit(1)
   }
 }
