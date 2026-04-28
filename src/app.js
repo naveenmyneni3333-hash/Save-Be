@@ -11,7 +11,7 @@ const errorHandler      = require('./middleware/errorHandler')
 const app = express()
 
 // ── Middleware ──
-app.use(cors({ origin: process.env.CLIENT_ORIGIN, credentials: true }))
+app.use(cors({ origin: [process.env.CLIENT_ORIGIN, 'https://savingsup.vercel.app'].filter(Boolean), credentials: true }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
