@@ -15,6 +15,11 @@ app.use(cors({ origin: process.env.CLIENT_ORIGIN, credentials: true }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// ── Root ──
+app.get('/', (req, res) => {
+  res.json({ success: true, message: 'SavingsBE is running 🚀' })
+})
+
 // ── Health check ──
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', service: 'SavingsBE', timestamp: new Date().toISOString() })
